@@ -9,11 +9,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.treble.www.treble.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:context="com.treble_app.www.treble.MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is where the feed goes!" />
+        android:text="This is where the music feed goes!" />
 </RelativeLayout>
