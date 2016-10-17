@@ -4,16 +4,18 @@ package com.treble.www.treble;
  * Created by Olivia on 10/16/2016.
  */
 
-import java.util.ArrayList;
-import android.*;
+
+//import android.*;
 import android.R;
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import java.util.ArrayList;
 
 public class CustomListAdapter extends BaseAdapter {
     private Context context;

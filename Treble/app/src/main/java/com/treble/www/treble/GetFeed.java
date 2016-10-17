@@ -75,8 +75,7 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
         }
     }
 
-
-    protected void onGetExectute(JSONArray songsRaw) {
+    protected void onPostExecute(JSONArray songsRaw) {
         JSONObject song;
         int numSongs = 0, count = 0;
         ArrayList<Song> songs = new ArrayList<Song>();
