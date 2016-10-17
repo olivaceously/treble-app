@@ -36,16 +36,16 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
     protected JSONArray doInBackground(Void... params) {
         try {
             URL api = new URL(MainActivity.SONG_API_URL + "?lat=" + lat + "&lng=" + lng);
-            HttpURLConnection conn = (HttpURLConnection)api.openConnection();
+            HttpURLConnection conn = (HttpURLConnection) api.openConnection();
+
+            conn.setRequestMethod("GET");
+            conn.connect();
+
 
             // See http://stackoverflow.com/questions/2492076/android-reading-from-an-input-stream-efficiently
             InputStream is = conn.getInputStream();
-            BufferedReader r = new BufferedReader(new InputStreamReader(is));
-            StringBuilder total = new StringBuilder();
-            String line;
-            while ((line = r.readLine()) != null) {
-                total.append(line);
-            }
+
+
             r.close();
             is.close();
             return new JSONArray(total.toString());
