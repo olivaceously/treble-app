@@ -22,6 +22,13 @@ import java.util.Collections;
 
 public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
+    private Context copyOfContext;
+
+    public GetFeed (Context context) {
+        super();
+        copyOfContext = context;
+    }
+
     double lat = 50;
     double lng = 50;
 
