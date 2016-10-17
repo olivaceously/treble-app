@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 // THIS IS WHERE WE ADD SONGS AND STUFF WITH SPOTIFY
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Eventually you can add a song!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
