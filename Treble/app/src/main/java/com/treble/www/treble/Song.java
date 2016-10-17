@@ -10,9 +10,11 @@ import android.util.Log;
  */
 public class Song {
     protected String token;
+
     protected double lat;
     protected double lng;
-    protected String id;
+    protected int id;
+    protected String spotify_id;
     protected String uri;
     protected String title;
     protected String artist;
@@ -22,13 +24,17 @@ public class Song {
     protected int appId;
     protected boolean active;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
+
+    public String getspotify_id () {return spotify_id;}
+
+    public void setSpotify_id(String spotify_id) {this.spotify_id = spotify_id;}
 
     public double getLat() {
         return lat;
