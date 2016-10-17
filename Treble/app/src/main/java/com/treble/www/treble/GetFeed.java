@@ -7,6 +7,8 @@ package com.treble.www.treble;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ListView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +24,11 @@ import java.util.Collections;
 
 public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
+    static String convertStreamToString(java.io.InputStream is) {
+        java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
+        return s.hasNext() ? s.next() : "";
+    }
+
     private Context copyOfContext;
 
     public GetFeed (Context context) {
@@ -34,21 +41,25 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
     @Override
     protected JSONArray doInBackground(Void... params) {
+
+        InputStream is = null;
+
         try {
             URL api = new URL(MainActivity.SONG_API_URL + "?lat=" + lat + "&lng=" + lng);
             HttpURLConnection conn = (HttpURLConnection) api.openConnection();
 
             conn.setRequestMethod("GET");
+            conn.setDoInput(true);
+
             conn.connect();
+            int response = conn.getResponseCode();
+            is = conn.getInputStream();
 
+            String contentAsString = convertStreamToString(is);
+            Log.d("hi", contentAsString);
 
-            // See http://stackoverflow.com/questions/2492076/android-reading-from-an-input-stream-efficiently
-            InputStream is = conn.getInputStream();
-
-
-            r.close();
-            is.close();
-            return new JSONArray(total.toString());
+            JSONArray array = new JSONArray(contentAsString);
+            return array;
         }
         catch (MalformedURLException e) {
             Log.e("GetFeed doInBG(): ", e.toString());
@@ -61,6 +72,43 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
         catch (JSONException e) {
             Log.e("GetFeed doInBG(): ", e.toString());
             return null;
+        }
+    }
+
+
+    protected void onGetExectute(JSONArray songsRaw) {
+        JSONObject song;
+        int numSongs = 0, count = 0;
+        ArrayList<Song> songs = new ArrayList<Song>();
+
+        try {
+            numSongs = songsRaw.length();
+            if (numSongs > 0) {
+                while (count < numSongs) {
+                    song = songsRaw.getJSONObject(count);
+                    Song s = new Song();
+                    s.setId(count);
+                    s.setSpotify_id(song.getString("id"));
+                    s.setUri(song.getString("uri"));
+                    s.setToken(song.getString("token"));
+                    s.setLat(song.getDouble("lat"));
+                    s.setLng(song.getDouble("lng"));
+                    s.setDateAdded(song.getString("dateAdded"));
+                    s.setTitle(song.getString("title"));
+                    s.setArtist(song.getString("artist"));
+                    s.setAlbum(song.getString("album"));
+                    s.setArt(song.getJSONArray("art"));
+                    songs.add(s);
+                    Log.d("hi", s.getAlbum());
+                    count++;
+                }
+                Collections.reverse(songs);
+                MainActivity.feedView.setAdapter(new CustomListAdapter(copyOfContext, songs));
+            }
+        }
+        catch (JSONException e) {
+            Log.d("okay", "wtf man");
+
         }
     }
 

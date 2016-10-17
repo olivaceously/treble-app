@@ -3,6 +3,7 @@ package com.treble.www.treble;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import java.util.ArrayList;
@@ -22,11 +23,12 @@ public class MainActivity extends AppCompatActivity
 
     public static final String SONG_API_URL = "https://treble-mobile.herokuapp.com";
 
+    static protected ListView feedView; // add static protected ? currently an error
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView feedView; // add static protected ? currently an error
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -113,5 +115,6 @@ public class MainActivity extends AppCompatActivity
 
     protected void parseFeed() {
         new GetFeed(getApplicationContext()).execute();
+        Log.d("doop", "okayyyyyy");
     }
 }

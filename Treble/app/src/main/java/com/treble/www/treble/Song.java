@@ -2,8 +2,10 @@ package com.treble.www.treble;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import org.json.JSONArray;
 
 import android.util.Log;
+
 
 /**
  * Created by Olivia on 10/16/2016.
@@ -23,6 +25,7 @@ public class Song {
     protected String dateAdded;
     protected int appId;
     protected boolean active;
+    protected JSONArray art;
 
     public int getId() {
         return id;
@@ -98,6 +101,14 @@ public class Song {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public JSONArray getArt() {
+        return art;
+    }
+
+    public void setArt(JSONArray art) {
+        this.art = art;
     }
 
     public int getAppId() {
