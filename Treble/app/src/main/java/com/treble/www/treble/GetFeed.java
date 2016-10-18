@@ -97,6 +97,7 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     s.setArtist(song.getString("artist"));
                     s.setAlbum(song.getString("album"));
                     s.setArt(song.getJSONArray("art"));
+                    s.
                     songs.add(s);
                     Log.d("hi", s.getAlbum());
                     count++;
