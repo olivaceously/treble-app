@@ -82,6 +82,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_about) {
             Toast.makeText(this, R.string.about_text, Toast.LENGTH_LONG).show();
             return true;
+        } else if (id == R.id.action_refresh){
+            parseFeed();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
