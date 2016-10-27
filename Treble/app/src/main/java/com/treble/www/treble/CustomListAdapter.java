@@ -6,21 +6,19 @@ package com.treble.www.treble;
 
 
 //import android.*;
-import android.R.layout;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
-import android.widget.ImageView;
-import android.widget.Toast;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,25 +100,40 @@ public class CustomListAdapter extends BaseAdapter {
         Button downVoteBtn = (Button)row.findViewById(R.id.downvote_button);
 
         upVoteBtn.setOnClickListener(new View.OnClickListener(){
+            boolean clicked = false;
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Upvoted!", Toast.LENGTH_LONG).show();
+                if (!clicked) {
+                    Toast.makeText(context, "Upvoted!", Toast.LENGTH_LONG).show();
+                    clicked = true;
+                }
+                else {
+                    Toast.makeText(context, "Already Voted!", Toast.LENGTH_LONG).show();
+                }
 //                //do something
 //                list.remove(position); //or some other task
 //                notifyDataSetChanged();
             }
         });
         downVoteBtn.setOnClickListener(new View.OnClickListener(){
+            boolean clicked = false;
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Downvoted!", Toast.LENGTH_LONG).show();
-                //do something
-                //notifyDataSetChanged();
+                if (!clicked) {
+                    Toast.makeText(context, "Downvoted!", Toast.LENGTH_LONG).show();
+                    clicked = true;
+                }
+                else {
+                    Toast.makeText(context, "Already Voted!", Toast.LENGTH_LONG).show();
+                }
+//                //do something
+//                list.remove(position); //or some other task
+//                notifyDataSetChanged();
             }
         });
 
 
-        row.setOnClickListener(new View.OnClickListener() {
+        row.findViewById(R.id.imageView1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
