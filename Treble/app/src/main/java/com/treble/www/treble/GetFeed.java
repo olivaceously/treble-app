@@ -7,15 +7,13 @@ package com.treble.www.treble;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,7 +22,7 @@ import java.util.Collections;
 
 public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
-    static String convertStreamToString(java.io.InputStream is) {
+    private static String convertStreamToString(java.io.InputStream is) {
         java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";
     }
@@ -97,7 +95,6 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     s.setArtist(song.getString("artist"));
                     s.setAlbum(song.getString("album"));
                     s.setArt(song.getJSONArray("art"));
-                    s.
                     songs.add(s);
                     Log.d("hi", s.getAlbum());
                     count++;
