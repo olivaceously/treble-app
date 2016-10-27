@@ -20,6 +20,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Button;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,7 +68,8 @@ public class CustomListAdapter extends BaseAdapter {
 
     public class Holder
     {
-        TextView tv;
+        TextView tv1;
+        TextView tv2;
         ImageView img;
     }
 
@@ -82,25 +84,47 @@ public class CustomListAdapter extends BaseAdapter {
         else {
             row = (View)convertView;
         }
-        holder.tv=(TextView) row.findViewById(R.id.textView1);
+        holder.tv1=(TextView) row.findViewById(R.id.textView1);
         holder.img=(ImageView) row.findViewById(R.id.imageView1);
-        holder.tv.setTextColor(Color.BLACK);
-        holder.tv.setText(songs.get(position).getTitle());
-        //holder.tv = (TextView) row.findViewById(android.R.id.text2);
-        //holder.tv.setTextColor(Color.BLACK);
-        //holder.tv.setText("by " + songs.get(position).getArtist() + " on " + songs.get(position).getAlbum());
-        //JSONArray song = songs.get(position).getArt();
-//        try {
-//            holder.img.setImageBitmap(getImageBitmap(song.getJSONObject(2).getString("url")));
-//        } catch(JSONException e) {
-//            Log.d("okay", "wtf man");
-//        }
+        holder.tv1.setTextColor(Color.BLACK);
+        holder.tv1.setText(songs.get(position).getTitle());
+        holder.tv2=(TextView) row.findViewById(R.id.textView2);
+        holder.tv2.setTextColor(Color.BLACK);
+        holder.tv2.setText(songs.get(position).getArtist());
+        JSONArray song = songs.get(position).getArt();
+        try {
+            holder.img.setImageBitmap(getImageBitmap(song.getJSONObject(1).getString("url")));
+        } catch(JSONException e) {
+            Log.d("okay", "wtf man");
+        }
+
+        Button upVoteBtn = (Button)row.findViewById(R.id.upvote_button);
+        Button downVoteBtn = (Button)row.findViewById(R.id.downvote_button);
+
+        upVoteBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Upvoted!", Toast.LENGTH_LONG).show();
+//                //do something
+//                list.remove(position); //or some other task
+//                notifyDataSetChanged();
+            }
+        });
+        downVoteBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Downvoted!", Toast.LENGTH_LONG).show();
+                //do something
+                //notifyDataSetChanged();
+            }
+        });
+
 
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Toast.makeText(context, "Hello", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "When you click on me, I will play the song!", Toast.LENGTH_LONG).show();
             }
         });
 
