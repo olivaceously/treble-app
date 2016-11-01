@@ -11,18 +11,20 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.w3c.dom.Text;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -30,6 +32,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+
+import static com.treble.www.treble.R.color.colorAccent;
 
 @SuppressWarnings("ALL")
 public class CustomListAdapter extends BaseAdapter {
@@ -68,15 +72,18 @@ public class CustomListAdapter extends BaseAdapter {
 
     public class Holder
     {
-        TextView tv1;
-        TextView tv2;
-        ImageView img;
+        TextView song;
+        TextView artist;
+        TextView votes;
+        ImageView album;
+        ImageButton upbtn;
+        ImageButton downbtn;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View row;
-        Holder holder = new Holder();
+        final Holder holder = new Holder();
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             //noinspection RedundantCast
@@ -86,58 +93,61 @@ public class CustomListAdapter extends BaseAdapter {
             //noinspection RedundantCast
             row = (View)convertView;
         }
-        holder.tv1=(TextView) row.findViewById(R.id.textView1);
-        holder.img=(ImageView) row.findViewById(R.id.imageView1);
-        holder.tv1.setTextColor(Color.BLACK);
-        holder.tv1.setText(songs.get(position).getTitle());
-        holder.tv2=(TextView) row.findViewById(R.id.textView2);
-        holder.tv2.setTextColor(Color.BLACK);
-        holder.tv2.setText(songs.get(position).getArtist());
+        holder.song =(TextView) row.findViewById(R.id.song);
+        holder.artist =(TextView) row.findViewById(R.id.artist);
+        holder.album =(ImageView) row.findViewById(R.id.album);
+        holder.votes = (TextView) row.findViewById(R.id.votes);
+        holder.upbtn = (ImageButton)row.findViewById(R.id.upvote_button);
+        holder.downbtn = (ImageButton)row.findViewById(R.id.downvote_button);
+
+        final int votes = songs.get(position).getCount();
+        holder.song.setTextColor(Color.BLACK);
+        holder.artist.setTextColor(Color.BLACK);
+        holder.votes.setTextColor(ContextCompat.getColor(context, R.color.colorAccent));
+        holder.votes.setText(String.valueOf(songs.get(position).getCount()));
+        holder.song.setText(songs.get(position).getTitle());
+        holder.artist.setText(songs.get(position).getArtist());
         JSONArray song = songs.get(position).getArt();
         try {
-            holder.img.setImageBitmap(getImageBitmap(song.getJSONObject(1).getString("url")));
+            holder.album.setImageBitmap(getImageBitmap(song.getJSONObject(1).getString("url")));
         } catch(JSONException e) {
             Log.d("okay", "wtf man");
         }
 
-        Button upVoteBtn = (Button)row.findViewById(R.id.upvote_button);
-        Button downVoteBtn = (Button)row.findViewById(R.id.downvote_button);
-
-        upVoteBtn.setOnClickListener(new View.OnClickListener(){
+        holder.upbtn.setOnClickListener(new View.OnClickListener(){
             boolean clicked = false;
             @Override
             public void onClick(View v) {
                 if (!clicked) {
                     Toast.makeText(context, "Upvoted!", Toast.LENGTH_LONG).show();
                     clicked = true;
+                    songs.get(position).setCount(votes+1);
+                    holder.votes.setText(String.valueOf(songs.get(position).getCount()));
                 }
                 else {
                     Toast.makeText(context, "Already Voted!", Toast.LENGTH_LONG).show();
                 }
-//                //do something
-//                list.remove(position); //or some other task
-//                notifyDataSetChanged();
             }
         });
-        downVoteBtn.setOnClickListener(new View.OnClickListener(){
+
+        holder.downbtn.setOnClickListener(new View.OnClickListener(){
             boolean clicked = false;
             @Override
             public void onClick(View v) {
                 if (!clicked) {
                     Toast.makeText(context, "Downvoted!", Toast.LENGTH_LONG).show();
                     clicked = true;
+                    songs.get(position).setCount(votes-1);
+                    holder.votes.setText(String.valueOf(songs.get(position).getCount()));
                 }
                 else {
                     Toast.makeText(context, "Already Voted!", Toast.LENGTH_LONG).show();
                 }
-//                //do something
-//                list.remove(position); //or some other task
-//                notifyDataSetChanged();
             }
         });
 
 
-        row.findViewById(R.id.imageView1).setOnClickListener(new View.OnClickListener() {
+        row.findViewById(R.id.album).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
