@@ -1,127 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:orientation="vertical" android:layout_width="fill_parent"-->
-    <!--android:layout_height="fill_parent"-->
-    <!--android:weightSum="1">-->
-
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView1"-->
-        <!--android:layout_gravity="left"-->
-        <!--android:layout_width="300dp"-->
-        <!--android:layout_height="300dp" />-->
-
-    <!--<Button-->
-        <!--android:text="+"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_toRightOf="@id/imageView1"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:minHeight="0dp"-->
-        <!--android:minWidth="0dp"-->
-        <!--android:backgroundTint="@color/colorPrimary"-->
-        <!--android:textColor="#ffffff"-->
-        <!--android:id="@+id/upvote_button" />-->
-
-    <!--<Button-->
-        <!--android:text="-"-->
-        <!--android:textColor="#ffffff"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_toRightOf="@id/imageView1"-->
-        <!--android:layout_below="@id/upvote_button"-->
-        <!--android:backgroundTint="@color/colorPrimary"-->
-        <!--android:minHeight="0dp"-->
-        <!--android:minWidth="0dp"-->
-        <!--android:id="@+id/downvote_button" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView1"-->
-        <!--android:layout_below="@+id/imageView1"-->
-        <!--android:layout_gravity="left"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="18sp"-->
-        <!--android:text="TextView" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView2"-->
-        <!--android:layout_below="@+id/textView1"-->
-        <!--android:layout_gravity="left"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="14sp"-->
-        <!--android:text="TextView" />-->
-
-
-<!--</LinearLayout>-->
-
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/album"
+        android:layout_width="275dp"
+        android:layout_height="275dp"
+        android:contentDescription="@string/album_art"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="45dp"
+        android:src="@mipmap/ic_arrow_upward_white_24dp"
+        android:id="@+id/upvote_button"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:tint="@color/colorPrimary"
+        android:background="@android:color/background_light" />
 
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="275dp"
-                android:layout_height="275dp"
-                android:layout_marginEnd="25dp"
-                android:contentDescription="@string/album_art"
-                />
+    <TextView
+        android:text="@string/votes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upvote_button"
+        android:layout_alignEnd="@+id/upvote_button"
+        android:layout_marginTop="18dp"
+        android:id="@+id/votes" />
 
-            <Button
-                android:text="@string/plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="50dp"
-                android:minWidth="45dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:textColor="#ffffff"
-                android:id="@+id/upvote_button"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="-32.5dp"
-                />
+    <TextView
+        android:id="@+id/song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/song_title"
+        android:layout_marginStart="22dp"
+        android:layout_below="@+id/album"
+        android:layout_alignParentStart="true" />
 
-            <Button
-                android:text="@string/minus"
-                android:textColor="#ffffff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
-                android:minHeight="50dp"
-                android:minWidth="45dp"
-                android:id="@+id/downvote_button"
-                android:layout_marginTop="90dp"
-                android:elevation="0dp"
-                android:layout_marginStart="-12.5dp"
-                />
+    <TextView
+        android:id="@+id/artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/artist"
+        android:layout_below="@+id/song"
+        android:layout_alignStart="@+id/song" />
 
-        </TableRow>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_arrow_downward_white_24dp"
+        android:id="@+id/downvote_button"
+        android:tint="@color/colorPrimary"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/votes"
+        android:layout_alignStart="@+id/upvote_button"
+        android:layout_alignEnd="@+id/votes" />
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:text="@string/song_title" />
-        </TableRow>
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="@string/artist" />
-        </TableRow>
-
-    </TableLayout>
+</RelativeLayout>
 
