@@ -21,7 +21,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 
-@SuppressWarnings("ALL")
 class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
     private static String convertStreamToString(java.io.InputStream is) {
@@ -36,11 +35,33 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
         copyOfContext = context;
     }
 
-    private double lat = 50;
-    private double lng = 50;
+//    LocationManager locationManager = (LocationManager)copyOfContext.getSystemService(Context.LOCATION_SERVICE);
+//
+//    private Location location = new Location(locationManager.GPS_PROVIDER);
+//    private double lng = location.getLongitude();
+//    private double lat = location.getLatitude();
+//
+//    LocationListener locationListener = new LocationListener() {
+//        public void onLocationChanged(Location location) {
+//            lng = location.getLongitude();
+//            lat = location.getLatitude();
+//            Log.d("what", Double.toString(lng));
+//        }
+//
+//        public void onStatusChanged(String provider, int status, Bundle extras) {}
+//
+//        public void onProviderEnabled(String provider) {}
+//
+//        public void onProviderDisabled(String provider) {}
+//    };
+
+    double lat = 50;
+    double lng = 50;
+
 
     @Override
     protected JSONArray doInBackground(Void... params) {
+
 
         @SuppressWarnings("UnusedAssignment") InputStream is = null;
 
@@ -56,7 +77,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
             is = conn.getInputStream();
 
             String contentAsString = convertStreamToString(is);
-            Log.d("hi", contentAsString);
+            Log.d("hi", Double.toString(lat));
 
             //noinspection UnnecessaryLocalVariable
             JSONArray array = new JSONArray(contentAsString);

@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String SONG_API_URL = "https://treble-mobile.herokuapp.com";
+    public static final String UPVOTE_API_URL = "https://treble-mobile.herokuapp.com/upvote";
 
 
 //    public void forceCrash(View view) {
