@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/MainActivity.java</file>
+    <line>11</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/MainActivity.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import</problem_class>
+    <description>Unused import &lt;code&gt;import java.util.List;&lt;/code&gt; #loc</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/MainActivity.java</file>
+    <line>10</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/MainActivity.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import</problem_class>
+    <description>Unused import &lt;code&gt;import java.util.ArrayList;&lt;/code&gt; #loc</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>7</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import</problem_class>
+    <description>Unused import &lt;code&gt;import android.util.Log;&lt;/code&gt; #loc</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>4</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import</problem_class>
+    <description>Unused import &lt;code&gt;import java.util.Locale;&lt;/code&gt; #loc</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>3</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import</problem_class>
+    <description>Unused import &lt;code&gt;import java.text.SimpleDateFormat;&lt;/code&gt; #loc</description>
+  </problem>
+</problems>
+

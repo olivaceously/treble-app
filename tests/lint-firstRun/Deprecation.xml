@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/MainActivity.java</file>
+    <line>51</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.MainActivity void onCreate(android.os.Bundle savedInstanceState)" />
+    <problem_class severity="WARNING" attribute_key="DEPRECATED_ATTRIBUTES">Deprecated API usage</problem_class>
+    <description>'setDrawerListener(android.support.v4.widget.DrawerLayout.DrawerListener)' is deprecated</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/androidTest/java/com/treble/www/treble/ApplicationTest.java</file>
+    <line>9</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="class" FQNAME="com.treble.www.treble.ApplicationTest" />
+    <problem_class severity="WARNING" attribute_key="DEPRECATED_ATTRIBUTES">Deprecated API usage</problem_class>
+    <description>'android.test.ApplicationTestCase' is deprecated</description>
+  </problem>
+</problems>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>43</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.GetFeed org.json.JSONArray doInBackground(java.lang.Void... params)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">Unused assignment</problem_class>
+    <description>Variable &lt;code&gt;is&lt;/code&gt; initializer &lt;code&gt;null&lt;/code&gt; is redundant</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>53</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.GetFeed org.json.JSONArray doInBackground(java.lang.Void... params)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">Unused assignment</problem_class>
+    <description>Variable &lt;code&gt;response&lt;/code&gt; is never used</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>78</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.GetFeed void onPostExecute(org.json.JSONArray songsRaw)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">Unused assignment</problem_class>
+    <description>Variable &lt;code&gt;numSongs&lt;/code&gt; initializer &lt;code&gt;0&lt;/code&gt; is redundant</description>
+  </problem>
+</problems>
+

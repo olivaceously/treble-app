@@ -15,9 +15,8 @@
         android:id="@+id/imageView"
         android:layout_width="110dp"
         android:layout_height="51dp"
-        android:src="@drawable/treble_icon" />
-        //android:paddingTop="@dimen/nav_header_vertical_spacing"
-
+        android:src="@mipmap/treble_icon"
+        android:contentDescription="@string/app_name"/>
 
     <TextView
         android:layout_width="match_parent"

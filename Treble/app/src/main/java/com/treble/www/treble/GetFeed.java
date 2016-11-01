@@ -2,6 +2,7 @@ package com.treble.www.treble;
 
 /**
  * Created by David McConnell on 10/16/16.
+ * Connects to backend server to get feed data
  */
 
 import android.content.Context;
@@ -20,7 +21,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
+@SuppressWarnings("ALL")
+class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
     private static String convertStreamToString(java.io.InputStream is) {
         java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
@@ -34,13 +36,13 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
         copyOfContext = context;
     }
 
-    double lat = 50;
-    double lng = 50;
+    private double lat = 50;
+    private double lng = 50;
 
     @Override
     protected JSONArray doInBackground(Void... params) {
 
-        InputStream is = null;
+        @SuppressWarnings("UnusedAssignment") InputStream is = null;
 
         try {
             URL api = new URL(MainActivity.SONG_API_URL + "?lat=" + lat + "&lng=" + lng);
@@ -50,12 +52,13 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
             conn.setDoInput(true);
 
             conn.connect();
-            int response = conn.getResponseCode();
+            @SuppressWarnings("UnusedAssignment") int response = conn.getResponseCode();
             is = conn.getInputStream();
 
             String contentAsString = convertStreamToString(is);
             Log.d("hi", contentAsString);
 
+            //noinspection UnnecessaryLocalVariable
             JSONArray array = new JSONArray(contentAsString);
             return array;
         }
@@ -75,8 +78,8 @@ public class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
     protected void onPostExecute(JSONArray songsRaw) {
         JSONObject song;
-        int numSongs = 0, count = 0;
-        ArrayList<Song> songs = new ArrayList<Song>();
+        @SuppressWarnings("UnusedAssignment") int numSongs = 0, count = 0;
+        @SuppressWarnings("Convert2Diamond") ArrayList<Song> songs = new ArrayList<Song>();
 
         try {
             numSongs = songsRaw.length();

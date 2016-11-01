@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml</file>
+    <line>8</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;Near Me&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml</file>
+    <line>12</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;Explore&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml</file>
+    <line>16</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;Notifications&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml</file>
+    <line>19</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;Useful Tools&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml</file>
+    <line>24</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;Profile&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml</file>
+    <line>28</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;Settings&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml</file>
+    <line>75</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;+&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml</file>
+    <line>88</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;–&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml</file>
+    <line>112</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;TextView&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml</file>
+    <line>122</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>&lt;html&gt;[I18N] Hardcoded string &quot;TextView&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource&lt;/html&gt;</description>
+  </problem>
+</problems>
+

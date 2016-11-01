@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Treble</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -9,10 +9,19 @@
     <string name="menu_action_refresh">Refresh</string>
     <string name="menu_action_profile">Profile</string>
     <string name="action_notifications">Notifications</string>
-    <string name="action_listen">Listen</string>
-    <string name="action_search">Search</string>
+    <string name="action_listen" tools:ignore="UnusedResources">Listen</string>
+    <string name="action_explore">Explore</string>
+    <string name="useful_tools">Useful Tools</string>
     <string name="action_nearme">Near Me</string>
     <string name="website">http://treble-app.tumblr.com/</string>
+    <string name="album_art">Album Artwork</string>
+    <string name="song_title">Song Title</string>
+    <string name="artist">Artist</string>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
+
 
     <string name="about_text">Treble\n\nVersion 1.0\n\nWritten by O. MacDougal and D. McConnell\n\nLast updated on 16 October 2016</string>
 </resources>

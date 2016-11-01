@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>38</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.GetFeed lng" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>37</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.GetFeed lat" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>30</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.GetFeed copyOfContext" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/CustomListAdapter.java</file>
+    <line>34</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.CustomListAdapter context" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/CustomListAdapter.java</file>
+    <line>35</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.CustomListAdapter songs" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+</problems>
+

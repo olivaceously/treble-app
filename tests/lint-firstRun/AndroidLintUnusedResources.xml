@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/values/strings.xml</file>
+    <line>12</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.string.action_listen&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/values/strings.xml</file>
+    <line>14</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.string.action_nearme&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/values/strings.xml</file>
+    <line>11</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.string.action_notifications&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/values/strings.xml</file>
+    <line>13</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.string.action_search&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/values/strings.xml</file>
+    <line>7</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.string.action_settings&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/values/strings.xml</file>
+    <line>10</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.string.menu_action_profile&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_slideshow.xml</file>
+    <line>1</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_slideshow.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.drawable.ic_menu_slideshow&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_send.xml</file>
+    <line>1</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_send.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.drawable.ic_menu_send&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_share.xml</file>
+    <line>1</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_share.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.drawable.ic_menu_share&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_gallery.xml</file>
+    <line>1</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_gallery.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.drawable.ic_menu_gallery&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_camera.xml</file>
+    <line>1</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_camera.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused resources</problem_class>
+    <hints />
+    <description>&lt;html&gt;The resource &lt;code&gt;R.drawable.ic_menu_camera&lt;/code&gt; appears to be unused&lt;/html&gt;</description>
+  </problem>
+</problems>
+

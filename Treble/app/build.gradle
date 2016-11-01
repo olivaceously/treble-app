@@ -1,9 +1,18 @@
 apply plugin: 'com.android.application'
 
+//noinspection GroovyMissingReturnStatement
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
 
+    lintOptions {
+        // set to true to turn off analysis progress reporting by lint
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+    }
     defaultConfig {
         applicationId "com.treble.www.treble"
         minSdkVersion 22
@@ -35,7 +44,10 @@ dependencies {
     // This library handles music playback
     compile 'com.spotify.sdk:spotify-player-beta23-noconnect-2.20b@aar'
 
+    //noinspection GradleDependency
     compile 'com.android.support:appcompat-v7:24.2.1'
+    //noinspection GradleDependency
     compile 'com.android.support:support-v4:24.2.1'
+    //noinspection GradleDependency
     compile 'com.android.support:design:24.2.1'
 }

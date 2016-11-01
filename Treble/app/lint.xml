@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Disable the given check in this project -->
+    <issue id="AndroidLintInflateParams" severity="ignore" />
+
+    <!-- Ignore the "Newer Version" issue in this project Want to be running 24.2.1 not 25.0.0 -->
+    <issue id="AndroidLintGradleDependency" severity="ignore" />
+
+    <!-- Ignore the AndroidLintUnusedResources issue in the string file
+            - will eventually be used -->
+    <issue id="AndroidLintUnusedResources">
+        <ignore path="res/values/strings.xml" />
+    </issue>
+
+    <!-- Ignore the AllowBackup issue - will decide on this later -->
+    <issue id="AndroidLintAllowBackup" severity="ignore" />
+
+    <!-- Ignore the Google App Indexing - will add this later -->
+    <issue id="AndroidLintGoogleAppIndexingWarning" severity="ignore" />
+
+    <!-- Since not everything has been implemented, suppressing unused warnings -->
+    <issue id="unused" severity="ignore" />
+
+
+</lint>

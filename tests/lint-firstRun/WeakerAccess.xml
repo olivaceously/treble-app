@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>38</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.GetFeed lng" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>37</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.GetFeed lat" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/GetFeed.java</file>
+    <line>23</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="class" FQNAME="com.treble.www.treble.GetFeed" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/MainActivity.java</file>
+    <line>122</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.MainActivity void parseFeed()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/MainActivity.java</file>
+    <line>27</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.MainActivity feedView" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/CustomListAdapter.java</file>
+    <line>33</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="class" FQNAME="com.treble.www.treble.CustomListAdapter" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>27</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song active" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>26</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song appId" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>21</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song title" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>17</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song lng" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>16</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song lat" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>24</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song count" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>20</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song uri" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>28</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song art" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>18</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song id" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>19</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song spotify_id" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>23</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song album" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>25</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song dateAdded" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>13</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="class" FQNAME="com.treble.www.treble.Song" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>14</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song token" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>22</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="field" FQNAME="com.treble.www.treble.Song artist" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+</problems>
+

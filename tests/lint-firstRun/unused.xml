@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>118</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song void setAppId(int appId)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>90</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song java.lang.String getUri()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>50</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song double getLng()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>114</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song int getAppId()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>122</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song boolean isActive()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>102</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song void setCount(int count)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>58</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song java.lang.String getToken()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>30</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song int getId()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>130</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song java.lang.String getDateAdded()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>98</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song int getCount()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>38</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song java.lang.String getspotify_id()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>126</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song void setActive(boolean active)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/com/treble/www/treble/Song.java</file>
+    <line>42</line>
+    <module>app</module>
+    <package>com.treble.www.treble</package>
+    <entry_point TYPE="method" FQNAME="com.treble.www.treble.Song double getLat()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+</problems>
+

@@ -4,28 +4,28 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_nearme"
-            android:icon="@drawable/ic_near_me_black_18dp"
-            android:title="Near Me" />
+            android:icon="@mipmap/ic_near_me_black_18dp"
+            android:title="@string/action_nearme" />
         <item
             android:id="@+id/nav_search"
-            android:icon="@drawable/ic_search_black_18dp"
-            android:title="Explore" />
+            android:icon="@mipmap/ic_search_black_18dp"
+            android:title="@string/action_explore" />
         <item
             android:id="@+id/nav_notifications"
-            android:icon="@drawable/ic_notifications_black_18dp"
-            android:title="Notifications" />
+            android:icon="@mipmap/ic_notifications_black_18dp"
+            android:title="@string/action_notifications" />
     </group>
 
-    <item android:title="Useful Tools">
+    <item android:title="@string/useful_tools">
         <menu>
             <item
                 android:id="@+id/nav_profile"
-                android:icon="@drawable/ic_person_black_18dp"
-                android:title="Profile" />
+                android:icon="@mipmap/ic_person_black_18dp"
+                android:title="@string/menu_action_profile" />
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Settings" />
+                android:title="@string/action_settings" />
         </menu>
     </item>
 

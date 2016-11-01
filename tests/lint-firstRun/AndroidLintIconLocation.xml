@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_near_me_black_18dp.png</file>
+    <line>0</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_near_me_black_18dp.png" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image defined in density-independent drawable folder</problem_class>
+    <hints />
+    <description>&lt;html&gt;Found bitmap drawable &lt;code&gt;res/drawable/ic_near_me_black_18dp.png&lt;/code&gt; in densityless folder&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_search_black_18dp.png</file>
+    <line>0</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_search_black_18dp.png" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image defined in density-independent drawable folder</problem_class>
+    <hints />
+    <description>&lt;html&gt;Found bitmap drawable &lt;code&gt;res/drawable/ic_search_black_18dp.png&lt;/code&gt; in densityless folder&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/treble_icon.png</file>
+    <line>0</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/treble_icon.png" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image defined in density-independent drawable folder</problem_class>
+    <hints />
+    <description>&lt;html&gt;Found bitmap drawable &lt;code&gt;res/drawable/treble_icon.png&lt;/code&gt; in densityless folder&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_person_black_18dp.png</file>
+    <line>0</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_person_black_18dp.png" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image defined in density-independent drawable folder</problem_class>
+    <hints />
+    <description>&lt;html&gt;Found bitmap drawable &lt;code&gt;res/drawable/ic_person_black_18dp.png&lt;/code&gt; in densityless folder&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_notifications_black_18dp.png</file>
+    <line>0</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_notifications_black_18dp.png" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image defined in density-independent drawable folder</problem_class>
+    <hints />
+    <description>&lt;html&gt;Found bitmap drawable &lt;code&gt;res/drawable/ic_notifications_black_18dp.png&lt;/code&gt; in densityless folder&lt;/html&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_music_note_white_18dp.png</file>
+    <line>0</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_music_note_white_18dp.png" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image defined in density-independent drawable folder</problem_class>
+    <hints />
+    <description>&lt;html&gt;Found bitmap drawable &lt;code&gt;res/drawable/ic_music_note_white_18dp.png&lt;/code&gt; in densityless folder&lt;/html&gt;</description>
+  </problem>
+</problems>
+

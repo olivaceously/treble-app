@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml</file>
+    <line>19</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Extraneous text in resource files</problem_class>
+    <hints />
+    <description>&lt;html&gt;Unexpected text found in layout file: &quot;//android:paddingTop=&quot;@dimen/nav_header_vertical_spacing&quot;&quot;&lt;/html&gt;</description>
+  </problem>
+</problems>
+

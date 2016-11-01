@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml</file>
+    <line>71</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/song_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>&lt;html&gt;Consider replacing &lt;code&gt;android:layout_marginRight&lt;/code&gt; with &lt;code&gt;android:layout_marginEnd=&quot;25dp&quot;&lt;/code&gt; to better support right-to-left layouts&lt;/html&gt;</description>
+  </problem>
+</problems>
+

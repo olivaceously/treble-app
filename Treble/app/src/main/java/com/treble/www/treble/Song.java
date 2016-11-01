@@ -1,16 +1,14 @@
 package com.treble.www.treble;
 
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 import org.json.JSONArray;
-
-import android.util.Log;
 
 
 /**
  * Created by Olivia on 10/16/2016.
+ * Song Class
  */
-public class Song {
+@SuppressWarnings("ALL")
+class Song {
     protected String token;
 
     protected double lat;

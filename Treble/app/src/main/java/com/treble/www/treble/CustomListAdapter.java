@@ -2,6 +2,7 @@ package com.treble.www.treble;
 
 /**
  * Created by Olivia on 10/16/2016.
+ * For CustomListAdapter
  */
 
 
@@ -30,6 +31,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+@SuppressWarnings("ALL")
 public class CustomListAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<Song> songs;
@@ -77,9 +79,11 @@ public class CustomListAdapter extends BaseAdapter {
         Holder holder = new Holder();
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //noinspection RedundantCast
             row = (View)inflater.inflate(R.layout.song_list, null);
         }
         else {
+            //noinspection RedundantCast
             row = (View)convertView;
         }
         holder.tv1=(TextView) row.findViewById(R.id.textView1);

@@ -68,11 +68,12 @@
                 android:id="@+id/imageView1"
                 android:layout_width="275dp"
                 android:layout_height="275dp"
-                android:layout_marginRight="25dp"
+                android:layout_marginEnd="25dp"
+                android:contentDescription="@string/album_art"
                 />
 
             <Button
-                android:text="+"
+                android:text="@string/plus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="50dp"
@@ -85,7 +86,7 @@
                 />
 
             <Button
-                android:text="–"
+                android:text="@string/minus"
                 android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textSize="18sp"
-                android:text="TextView" />
+                android:text="@string/song_title" />
         </TableRow>
         <TableRow
             android:layout_width="fill_parent"
@@ -119,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="TextView" />
+                android:text="@string/artist" />
         </TableRow>
 
     </TableLayout>
