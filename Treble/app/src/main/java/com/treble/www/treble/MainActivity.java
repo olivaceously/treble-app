@@ -1,6 +1,7 @@
 package com.treble.www.treble;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String SONG_API_URL = "https://treble-mobile.herokuapp.com";
+    public static final String SEARCH_API_URL = "https://treble-mobile.herokuapp.com/searchsong";
     public static final String UPVOTE_API_URL = "https://treble-mobile.herokuapp.com/upvote";
 
 
@@ -52,9 +54,9 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // THIS IS WHERE WE ADD SONGS AND STUFF WITH SPOTIFY
-                Snackbar.make(view, "Eventually you can add a song!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent myIntent = new Intent(MainActivity.this,
+                        AddSong.class);
+                startActivity(myIntent);
             }
         });
 
@@ -134,6 +136,5 @@ public class MainActivity extends AppCompatActivity
 
     private void parseFeed() {
         new GetFeed(getApplicationContext()).execute();
-        Log.d("doop", "okayyyyyy");
     }
 }
