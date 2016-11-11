@@ -109,7 +109,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     song = songsRaw.getJSONObject(count);
                     Song s = new Song();
                     s.setId(count);
-                    s.setSpotify_id(song.getString("id"));
+                    s.setSpotify_id(song.getString("spotid"));
                     s.setUri(song.getString("uri"));
                     s.setToken(song.getString("token"));
                     s.setLat(song.getDouble("lat"));
