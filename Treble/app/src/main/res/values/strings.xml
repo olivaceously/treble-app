@@ -17,6 +17,10 @@
     <string name="album_art">Album Artwork</string>
     <string name="song_title">Song Title</string>
     <string name="artist">Artist</string>
+    <string name="instructions">Search Spotify for a song to add to the feed!</string>
+    <string name="example_query">Hello Adele</string>
+    <string name="search">Search</string>
+
 
     <string name="plus">+</string>
     <string name="votes">votes</string>
@@ -24,5 +28,5 @@
 
 
 
-    <string name="about_text">Treble\n\nVersion 1.0\n\nWritten by O. MacDougal and D. McConnell\n\nLast updated on 16 October 2016</string>
+    <string name="about_text">Treble\n\nVersion 1.0\n\nWritten by O. MacDougal and D. McConnell\n\nLast updated on 11 November 2016</string>
 </resources>

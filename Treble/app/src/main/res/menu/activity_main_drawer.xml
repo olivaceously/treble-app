@@ -6,17 +6,17 @@
             android:id="@+id/nav_nearme"
             android:icon="@mipmap/ic_near_me_black_18dp"
             android:title="@string/action_nearme" />
-        <item
+        <!--<item
             android:id="@+id/nav_search"
             android:icon="@mipmap/ic_search_black_18dp"
-            android:title="@string/action_explore" />
-        <item
+            android:title="@string/action_explore" />-->
+       <!-- <item
             android:id="@+id/nav_notifications"
             android:icon="@mipmap/ic_notifications_black_18dp"
-            android:title="@string/action_notifications" />
+            android:title="@string/action_notifications" />-->
     </group>
 
-    <item android:title="@string/useful_tools">
+   <!-- <item android:title="@string/useful_tools">
         <menu>
             <item
                 android:id="@+id/nav_profile"
@@ -27,6 +27,6 @@
                 android:icon="@drawable/ic_menu_manage"
                 android:title="@string/action_settings" />
         </menu>
-    </item>
+    </item>-->
 
 </menu>
