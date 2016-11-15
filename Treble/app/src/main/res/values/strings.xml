@@ -27,6 +27,8 @@
     <string name="minus">-</string>
 
 
-
     <string name="about_text">Treble\n\nVersion 1.0\n\nWritten by O. MacDougal and D. McConnell\n\nLast updated on 11 November 2016</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

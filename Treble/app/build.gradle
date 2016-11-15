@@ -49,7 +49,6 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
 
     // This library handles authentication and authorization
     compile 'com.spotify.sdk:spotify-auth-beta23-noconnect-2.20b@aar'
@@ -57,12 +56,15 @@ dependencies {
     compile 'com.spotify.sdk:spotify-player-beta23-noconnect-2.20b@aar'
 
     //noinspection GradleDependency
-    compile 'com.android.support:appcompat-v7:24.2.1'
     //noinspection GradleDependency
-    compile 'com.android.support:support-v4:24.2.1'
     //noinspection GradleDependency
-    compile 'com.android.support:design:24.2.1'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
+    testCompile 'junit:junit:4.12'
 }
