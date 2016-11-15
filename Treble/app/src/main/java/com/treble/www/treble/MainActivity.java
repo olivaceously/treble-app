@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
 
     public double lat;
     public double lng;
+    public boolean loaded = false;
 
 //    public void forceCrash(View view) {
 //        throw new RuntimeException("This is a crash");
@@ -81,6 +82,10 @@ public class MainActivity extends AppCompatActivity
             public void onLocationChanged(Location location) {
                 lng = location.getLongitude();
                 lat = location.getLatitude();
+                if (!loaded) {
+                    parseFeed();
+                    loaded = true;
+                }
                 Log.d("please", Double.toString(lat));
                 Log.d("pleas2", Double.toString(lng));
             }

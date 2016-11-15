@@ -122,7 +122,7 @@ public class CustomListAdapter extends BaseAdapter {
                     clicked = true;
 
                     try {
-                        URL api = new URL(MainActivity.UPVOTE_API_URL + "?id=" + songs.get(position).getId());
+                        URL api = new URL(MainActivity.UPVOTE_API_URL + "?id=" + songs.get(position).getMongoId());
                         HttpURLConnection conn = (HttpURLConnection) api.openConnection();
 
                         conn.setRequestMethod("GET");
