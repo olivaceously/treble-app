@@ -44,6 +44,8 @@ public class CustomListAdapter extends BaseAdapter {
         this.songs = songs;
     }
 
+    public boolean clicked = false;
+
     @Override
     public int getCount() {
         return songs.size();
@@ -114,7 +116,6 @@ public class CustomListAdapter extends BaseAdapter {
         }
 
         holder.upbtn.setOnClickListener(new View.OnClickListener(){
-            boolean clicked = false;
             InputStream is = null;
             @Override
             public void onClick(View v) {
@@ -150,12 +151,30 @@ public class CustomListAdapter extends BaseAdapter {
         });
 
         holder.downbtn.setOnClickListener(new View.OnClickListener(){
-            boolean clicked = false;
             @Override
             public void onClick(View v) {
                 if (!clicked) {
-                    Toast.makeText(context, "Downvoted!", Toast.LENGTH_LONG).show();
                     clicked = true;
+
+                    try {
+                        URL api = new URL(MainActivity.DOWNVOTE_API_URL + "?id=" + songs.get(position).getMongoId());
+                        HttpURLConnection conn = (HttpURLConnection) api.openConnection();
+
+                        conn.setRequestMethod("GET");
+                        conn.setDoInput(true);
+
+                        conn.connect();
+                        @SuppressWarnings("UnusedAssignment") int response = conn.getResponseCode();
+                        if (response != 200) {
+                            Toast.makeText(context, "Something went wrong, try again!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    catch (MalformedURLException e) {
+                        Log.e("GetFeed doInBG(): ", e.toString());
+                    }
+                    catch (IOException e) {
+                        Log.e("GetFeed doInBG(): ", e.toString());
+                    }
                     songs.get(position).setCount(votes-1);
                     holder.votes.setText(String.valueOf(songs.get(position).getCount()));
                 }
