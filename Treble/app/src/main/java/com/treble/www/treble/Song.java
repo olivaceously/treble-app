@@ -14,6 +14,7 @@ class Song {
     protected double lat;
     protected double lng;
     protected int id;
+    protected String mongoId;
     protected String spotify_id;
     protected String uri;
     protected String title;
@@ -32,6 +33,10 @@ class Song {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getMongoId() {return mongoId;}
+
+    public void setMongoId(String mongoId) {this.mongoId = mongoId;}
 
     public String getspotify_id () {return spotify_id;}
 

@@ -41,7 +41,7 @@ public class SearchSong extends AsyncTask<Void, Integer, JSONArray> {
             @SuppressWarnings("UnusedAssignment") InputStream is = null;
 
             try {
-                URL api = new URL(MainActivity.SEARCH_API_URL + "?song=" + query.getText().toString());
+               URL api = new URL(MainActivity.SEARCH_API_URL + "?song=" + "hello");//query.getText().toString());
                 HttpURLConnection conn = (HttpURLConnection) api.openConnection();
 
                 conn.setRequestMethod("GET");
@@ -109,4 +109,4 @@ public class SearchSong extends AsyncTask<Void, Integer, JSONArray> {
 
     }
 
-}
+

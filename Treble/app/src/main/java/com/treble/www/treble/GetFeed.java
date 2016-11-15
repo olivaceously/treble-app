@@ -30,34 +30,15 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
 
     private Context copyOfContext;
 
-    public GetFeed (Context context) {
+    double lat;
+    double lng;
+
+    public GetFeed (Context context, double latitude, double longitude) {
         super();
         copyOfContext = context;
+        lat = latitude;
+        lng = longitude;
     }
-
-//    LocationManager locationManager = (LocationManager)copyOfContext.getSystemService(Context.LOCATION_SERVICE);
-//
-//    private Location location = new Location(locationManager.GPS_PROVIDER);
-//    private double lng = location.getLongitude();
-//    private double lat = location.getLatitude();
-//
-//    LocationListener locationListener = new LocationListener() {
-//        public void onLocationChanged(Location location) {
-//            lng = location.getLongitude();
-//            lat = location.getLatitude();
-//            Log.d("what", Double.toString(lng));
-//        }
-//
-//        public void onStatusChanged(String provider, int status, Bundle extras) {}
-//
-//        public void onProviderEnabled(String provider) {}
-//
-//        public void onProviderDisabled(String provider) {}
-//    };
-
-    double lat = 50;
-    double lng = 50;
-
 
     @Override
     protected JSONArray doInBackground(Void... params) {
@@ -77,7 +58,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
             is = conn.getInputStream();
 
             String contentAsString = convertStreamToString(is);
-            Log.d("hi", Double.toString(lat));
+            Log.d("hererere", Double.toString(lat));
 
             //noinspection UnnecessaryLocalVariable
             JSONArray array = new JSONArray(contentAsString);
@@ -108,7 +89,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                 while (count < numSongs) {
                     song = songsRaw.getJSONObject(count);
                     Song s = new Song();
-                    s.setId(count);
+                    s.setMongoId(song.getString("_id"));
                     s.setSpotify_id(song.getString("spotid"));
                     s.setUri(song.getString("uri"));
                     s.setToken(song.getString("token"));
@@ -121,6 +102,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     s.setArt(song.getJSONArray("art"));
                     songs.add(s);
                     Log.d("hi", s.getAlbum());
+                    Log.d("hi", s.getMongoId());
                     count++;
                 }
                 Collections.reverse(songs);
