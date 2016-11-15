@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 Log.d("please", Double.toString(lat));
                 Log.d("pleas2", Double.toString(lng));
+
             }
 
             @Override
