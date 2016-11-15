@@ -33,6 +33,7 @@ public class AddSong extends Activity {
     }
 
     private void parseSearch(EditText query) {
-        new SearchSong(getApplicationContext(), query).execute();
+        String data = query.getText().toString();
+        new SearchSong(getApplicationContext(), data).execute();
     }
 }

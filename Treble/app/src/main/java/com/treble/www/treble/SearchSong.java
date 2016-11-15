@@ -21,7 +21,7 @@ import java.util.Collections;
  * Created by Olivia on 11/11/2016.
  */
 
-public class SearchSong extends AsyncTask<Void, Integer, JSONArray> {
+public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
 
         private static String convertStreamToString(java.io.InputStream is) {
             java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
@@ -30,18 +30,18 @@ public class SearchSong extends AsyncTask<Void, Integer, JSONArray> {
 
         private Context copyOfContext;
 
-        public SearchSong (Context context, EditText query) {
+        public SearchSong (Context context, String query) {
             super();
             copyOfContext = context;
         }
 
         @Override
-        protected JSONArray doInBackground(Void... params) {
+        protected JSONArray doInBackground(String... query) {
 
             @SuppressWarnings("UnusedAssignment") InputStream is = null;
 
             try {
-               URL api = new URL(MainActivity.SEARCH_API_URL + "?song=" + "hello");//query.getText().toString());
+                URL api = new URL(MainActivity.SEARCH_API_URL + "?song=" + query);
                 HttpURLConnection conn = (HttpURLConnection) api.openConnection();
 
                 conn.setRequestMethod("GET");
@@ -103,10 +103,8 @@ public class SearchSong extends AsyncTask<Void, Integer, JSONArray> {
             }
             catch (JSONException e) {
                 Log.d("okay", "wtf man");
-
             }
         }
-
     }
 
 
