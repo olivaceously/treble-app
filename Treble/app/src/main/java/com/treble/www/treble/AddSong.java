@@ -33,23 +33,13 @@ public class AddSong extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        
+
         Bundle b  = this.getIntent().getExtras();
 
         lat = b.getDouble("lat");
         lng = b.getDouble("lng");
         Log.d("omg pleaseeee", Double.toString(lat));
 
-//        Action action = new AbstractAction()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                System.out.println("some action");
-//            }
-//        };
-//        lat = intent.getDoubleExtra("lat", defaultValue);
-//        lng = intent.getDoubleExtra("lng", defaultValue);
         Log.d("addsong","inside addsong!");
         Button search = (Button) findViewById(R.id.search_button);
         final EditText query   = (EditText)findViewById(R.id.userQuery);
