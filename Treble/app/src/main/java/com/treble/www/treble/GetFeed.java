@@ -58,7 +58,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
             is = conn.getInputStream();
 
             String contentAsString = convertStreamToString(is);
-            Log.d("hererere", Double.toString(lat));
+            Log.d("hererere", contentAsString);
 
             //noinspection UnnecessaryLocalVariable
             JSONArray array = new JSONArray(contentAsString);
@@ -96,6 +96,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     s.setLat(song.getDouble("lat"));
                     s.setLng(song.getDouble("lng"));
                     s.setDateAdded(song.getString("dateAdded"));
+                    s.setCount(song.getInt("count"));
                     s.setTitle(song.getString("title"));
                     s.setArtist(song.getString("artist"));
                     s.setAlbum(song.getString("album"));

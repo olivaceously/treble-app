@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity
     public static final String SONG_API_URL = "https://treble-mobile.herokuapp.com";
     public static final String SEARCH_API_URL = "https://treble-mobile.herokuapp.com/searchsong";
     public static final String UPVOTE_API_URL = "https://treble-mobile.herokuapp.com/upvote";
+    public static final String DOWNVOTE_API_URL = "https://treble-mobile.herokuapp.com/downvote";
 
     private LocationManager locationManager;
     private LocationListener locationListener;
