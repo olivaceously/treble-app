@@ -30,10 +30,16 @@ import java.util.ArrayList;
 public class AddSongListAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<Song> songs;
+    private double lat;
+    private double lng;
 
-    public AddSongListAdapter(Context context, ArrayList<Song> songs) {
+
+
+    public AddSongListAdapter(Context context, ArrayList<Song> songs, double latitude, double longitude) {
         this.context = context;
         this.songs = songs;
+        this.lat = latitude;
+        this.lng = longitude;
     }
 
     @Override
@@ -97,7 +103,7 @@ public class AddSongListAdapter extends BaseAdapter {
             Log.d("addsonglistadapter", "wtf man");
         }
 
-        row.findViewById(R.id.album).setOnClickListener(new View.OnClickListener() {
+        row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub

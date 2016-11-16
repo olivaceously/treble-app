@@ -32,6 +32,8 @@ import com.crashlytics.android.Crashlytics;
 
 import io.fabric.sdk.android.Fabric;
 
+import static android.R.attr.defaultValue;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -67,14 +69,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(MainActivity.this, AddSong.class);
-                startActivity(myIntent);
-            }
-        });
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {
@@ -85,6 +80,16 @@ public class MainActivity extends AppCompatActivity
                 if (!loaded) {
                     parseFeed();
                     loaded = true;
+                    fab.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent myIntent = new Intent(MainActivity.this, AddSong.class);
+                            myIntent.putExtra("lat", lat);
+                            myIntent.putExtra("lng", lng);
+                            Log.d("okay", Double.toString(myIntent.getDoubleExtra("lat", defaultValue)));
+                            startActivity(myIntent);
+                        }
+                    });
                 }
                 Log.d("please", Double.toString(lat));
                 Log.d("pleas2", Double.toString(lng));

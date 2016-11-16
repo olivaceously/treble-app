@@ -3,7 +3,6 @@ package com.treble.www.treble;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,7 +14,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 
 import static java.net.URLEncoder.encode;
 
@@ -31,10 +29,14 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
         }
 
         private Context copyOfContext;
+        double lat;
+        double lng;
 
-        public SearchSong (Context context) {
+        public SearchSong (Context context, double latitude, double longitude) {
             super();
             copyOfContext = context;
+            lat = latitude;
+            lng = longitude;
         }
 
         @Override
@@ -89,7 +91,12 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                         s.setId(count);
                         s.setSpotify_id(song.getString("id"));
                         s.setUri(song.getString("uri"));
-                        s.setTitle(song.getString("title"));
+                        if (song.getString("title").length() < 30) {
+                            s.setTitle(song.getString("title"));
+                        }
+                        else {
+                            s.setTitle(song.getString("title").substring(0, 29) + "...");
+                        }
                         s.setArtist(song.getString("artist"));
                         s.setAlbum(song.getString("album"));
                         s.setArt(song.getJSONArray("art"));
@@ -97,8 +104,7 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                         Log.d("hi", s.getAlbum());
                         count++;
                     }
-                    Collections.reverse(songs);
-                    AddSong.searchList.setAdapter(new AddSongListAdapter(copyOfContext, songs));
+                    AddSong.searchList.setAdapter(new AddSongListAdapter(copyOfContext, songs, lat, lng));
                 }
             }
             catch (JSONException e) {

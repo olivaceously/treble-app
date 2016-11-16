@@ -1,9 +1,13 @@
 package com.treble.www.treble;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -15,6 +19,10 @@ import android.widget.ListView;
 public class AddSong extends AppCompatActivity {
 
     static protected ListView searchList;
+
+    double lat;
+    double lng;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +33,46 @@ public class AddSong extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+        
+        Bundle b  = this.getIntent().getExtras();
 
+        lat = b.getDouble("lat");
+        lng = b.getDouble("lng");
+        Log.d("omg pleaseeee", Double.toString(lat));
+
+//        Action action = new AbstractAction()
+//        {
+//            @Override
+//            public void actionPerformed(ActionEvent e)
+//            {
+//                System.out.println("some action");
+//            }
+//        };
+//        lat = intent.getDoubleExtra("lat", defaultValue);
+//        lng = intent.getDoubleExtra("lng", defaultValue);
         Log.d("addsong","inside addsong!");
         Button search = (Button) findViewById(R.id.search_button);
         final EditText query   = (EditText)findViewById(R.id.userQuery);
+        final InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        query.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    searchList = (ListView)findViewById(R.id.search_list);
+                    parseSearch(query);
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    return true;
+                }
+                return false;
+            }
+        });
         search.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 searchList = (ListView)findViewById(R.id.search_list);
                 parseSearch(query);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
             }
         });
 
@@ -42,6 +81,6 @@ public class AddSong extends AppCompatActivity {
     private void parseSearch(EditText query) {
         String data = query.getText().toString();
         Log.d("addsong", data);
-        new SearchSong(getApplicationContext()).execute(data);
+        new SearchSong(getApplicationContext(), lat, lng).execute(data);
     }
 }
