@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/addToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
 
     <TextView
         android:text="@string/instructions"
         android:layout_width="match_parent"
+        android:textSize="16sp"
         android:layout_height="wrap_content"
         android:id="@+id/instructions" />
 
@@ -13,7 +31,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/example_query"
         android:ems="10"
         android:id="@+id/userQuery" />
 
@@ -21,7 +38,9 @@
         android:text="@string/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/search_button" />
+        android:textColor="@color/white"
+        android:id="@+id/search_button"
+        android:backgroundTint="@color/colorPrimary" />
 
     <ListView
         android:id="@+id/search_list"

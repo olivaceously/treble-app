@@ -3,7 +3,7 @@ package com.treble.www.treble;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +16,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import static java.net.URLEncoder.encode;
 
 /**
  * Created by Olivia on 11/11/2016.
@@ -30,18 +32,19 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
 
         private Context copyOfContext;
 
-        public SearchSong (Context context, String query) {
+        public SearchSong (Context context) {
             super();
             copyOfContext = context;
         }
 
         @Override
-        protected JSONArray doInBackground(String... query) {
+        protected JSONArray doInBackground(String...query) {
 
             @SuppressWarnings("UnusedAssignment") InputStream is = null;
+            Log.d("search_query", query[0]);
 
             try {
-                URL api = new URL(MainActivity.SEARCH_API_URL + "?song=" + query);
+                URL api = new URL(MainActivity.SEARCH_API_URL + "?song=" + encode(query[0], "UTF-8"));
                 HttpURLConnection conn = (HttpURLConnection) api.openConnection();
 
                 conn.setRequestMethod("GET");
@@ -52,7 +55,7 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                 is = conn.getInputStream();
 
                 String contentAsString = convertStreamToString(is);
-
+                Log.d("searchsong", contentAsString);
                 //noinspection UnnecessaryLocalVariable
                 JSONArray array = new JSONArray(contentAsString);
                 return array;
@@ -80,15 +83,12 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                 numSongs = songsRaw.length();
                 if (numSongs > 0) {
                     while (count < numSongs) {
+                        Log.d("while", "inside!");
                         song = songsRaw.getJSONObject(count);
                         Song s = new Song();
                         s.setId(count);
                         s.setSpotify_id(song.getString("id"));
                         s.setUri(song.getString("uri"));
-                        s.setToken(song.getString("token"));
-                        s.setLat(song.getDouble("lat"));
-                        s.setLng(song.getDouble("lng"));
-                        s.setDateAdded(song.getString("dateAdded"));
                         s.setTitle(song.getString("title"));
                         s.setArtist(song.getString("artist"));
                         s.setAlbum(song.getString("album"));
@@ -98,7 +98,7 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                         count++;
                     }
                     Collections.reverse(songs);
-                    AddSong.searchList.setAdapter(new CustomListAdapter(copyOfContext, songs));
+                    AddSong.searchList.setAdapter(new AddSongListAdapter(copyOfContext, songs));
                 }
             }
             catch (JSONException e) {
