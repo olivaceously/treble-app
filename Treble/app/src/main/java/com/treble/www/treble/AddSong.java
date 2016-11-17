@@ -38,9 +38,7 @@ public class AddSong extends AppCompatActivity {
 
         lat = b.getDouble("lat");
         lng = b.getDouble("lng");
-        Log.d("omg pleaseeee", Double.toString(lat));
 
-        Log.d("addsong","inside addsong!");
         Button search = (Button) findViewById(R.id.search_button);
         final EditText query   = (EditText)findViewById(R.id.userQuery);
         final InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);

@@ -92,7 +92,7 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     s.setMongoId(song.getString("_id"));
                     s.setSpotify_id(song.getString("spotid"));
                     s.setUri(song.getString("uri"));
-                    s.setToken(song.getString("token"));
+//                    s.setToken(song.getString("token"));
                     s.setLat(song.getDouble("lat"));
                     s.setLng(song.getDouble("lng"));
                     s.setDateAdded(song.getString("dateAdded"));

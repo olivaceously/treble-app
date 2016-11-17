@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity
 
     public static final String SONG_API_URL = "https://treble-mobile.herokuapp.com";
     public static final String SEARCH_API_URL = "https://treble-mobile.herokuapp.com/searchsong";
+    public static final String ADD_API_URL = "https://treble-mobile.herokuapp.com/addsong";
     public static final String UPVOTE_API_URL = "https://treble-mobile.herokuapp.com/upvote";
     public static final String DOWNVOTE_API_URL = "https://treble-mobile.herokuapp.com/downvote";
 
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     public double lat;
     public double lng;
     public boolean loaded = false;
+    
 
 //    public void forceCrash(View view) {
 //        throw new RuntimeException("This is a crash");

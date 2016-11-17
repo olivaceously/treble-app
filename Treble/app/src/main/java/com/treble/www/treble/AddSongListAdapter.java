@@ -11,14 +11,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.BufferedInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -32,6 +34,14 @@ public class AddSongListAdapter extends BaseAdapter {
     private ArrayList<Song> songs;
     private double lat;
     private double lng;
+
+    private static String convertStreamToString(java.io.InputStream is) {
+        java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
+        return s.hasNext() ? s.next() : "";
+    }
+
+    InputStream is = null;
+    private final String USER_AGENT = "Mozilla/5.0";
 
 
 
@@ -91,7 +101,6 @@ public class AddSongListAdapter extends BaseAdapter {
         holder.artist =(TextView) row.findViewById(R.id.artist);
         holder.album =(ImageView) row.findViewById(R.id.album);
 
-        final int votes = songs.get(position).getCount();
         holder.song.setTextColor(Color.BLACK);
         holder.artist.setTextColor(Color.BLACK);
         holder.song.setText(songs.get(position).getTitle());
@@ -106,8 +115,41 @@ public class AddSongListAdapter extends BaseAdapter {
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(context, "Adding song to feed!", Toast.LENGTH_LONG).show();
+                try {
+                    Log.d("nopnop", songs.get(position).getspotify_id());
+                    URL api = new URL(MainActivity.ADD_API_URL);
+                    HttpURLConnection conn = (HttpURLConnection) api.openConnection();
+
+                    conn.setRequestMethod("POST");
+                    conn.setRequestProperty("User-Agent", USER_AGENT);
+                    conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+
+                    String data = "lat=" + lat + "&lng=" + lng + "&spotid=" + songs.get(position).getspotify_id();
+
+                    conn.setDoInput(true);
+                    DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+                    wr.writeBytes(data);
+                    wr.flush();
+                    wr.close();
+
+                    int responseCode = conn.getResponseCode();
+                    System.out.println("\nSending 'POST' request to URL : " + MainActivity.ADD_API_URL);
+                    System.out.println("Post parameters : " + data);
+                    System.out.println("Response Code : " + responseCode);
+
+                    //noinspection UnnecessaryLocalVariable
+//                    JSONArray array = new JSONArray(contentAsString);
+                    return;
+                }
+                catch (MalformedURLException e) {
+                    Log.e("GetFeed doInBG(): ", e.toString());
+                    return;
+                }
+                catch (IOException e) {
+                    Log.e("GetFeed doInBG(): ", e.toString());
+                    return;
+                }
+//                Toast.makeText(context, "Adding song to feed!", Toast.LENGTH_LONG).show();
             }
         });
 
