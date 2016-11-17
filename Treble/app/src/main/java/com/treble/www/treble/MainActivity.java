@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
 //    Comments (if we're adventurous)
 //    A "hot" feed, based on votes rather than date submitted. (Easy to do on backend)
 //
-            
+
 
     @SuppressLint("StaticFieldLeak")
     @SuppressWarnings("WeakerAccess")
