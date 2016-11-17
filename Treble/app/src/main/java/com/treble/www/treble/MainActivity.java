@@ -49,12 +49,16 @@ public class MainActivity extends AppCompatActivity
     public double lat;
     public double lng;
     public boolean loaded = false;
-    
 
-//    public void forceCrash(View view) {
-//        throw new RuntimeException("This is a crash");
-//    }
-
+//    TODO: improvements to make to the app
+//    Implement android device id/token
+//    Layout stuff: top bar on adding a song, relative layout for the feed
+//    When you add a song, go back to the feed (? how?)
+//    Persistent upvoting and downvoting (doesn't get removed after reloading the feed -> involves device id)
+//    Comments (if we're adventurous)
+//    A "hot" feed, based on votes rather than date submitted. (Easy to do on backend)
+//
+            
 
     @SuppressLint("StaticFieldLeak")
     @SuppressWarnings("WeakerAccess")
