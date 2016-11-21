@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity
 
     public double lat;
     public double lng;
+
     public boolean loaded = false;
 
 //    TODO: improvements to make to the app
@@ -78,6 +79,28 @@ public class MainActivity extends AppCompatActivity
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        boolean network_enabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+        Location location;
+
+        if(network_enabled){
+
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.INTERNET}
+                            , 10);
+                }
+                return;
+            }
+
+            location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if(location!=null){
+                lat = location.getLatitude();
+                lng = location.getLongitude();
+            }
+        }
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {

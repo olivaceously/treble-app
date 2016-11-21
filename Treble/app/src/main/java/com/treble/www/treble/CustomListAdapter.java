@@ -44,7 +44,7 @@ public class CustomListAdapter extends BaseAdapter {
         this.songs = songs;
     }
 
-    public boolean clicked = false;
+
 
     @Override
     public int getCount() {
@@ -79,6 +79,7 @@ public class CustomListAdapter extends BaseAdapter {
         ImageView album;
         ImageButton upbtn;
         ImageButton downbtn;
+        boolean clicked = false;
     }
 
     @Override
@@ -119,8 +120,8 @@ public class CustomListAdapter extends BaseAdapter {
             InputStream is = null;
             @Override
             public void onClick(View v) {
-                if (!clicked) {
-                    clicked = true;
+                if (!holder.clicked) {
+                    holder.clicked = true;
 
                     try {
                         URL api = new URL(MainActivity.UPVOTE_API_URL + "?id=" + songs.get(position).getMongoId());
@@ -153,8 +154,8 @@ public class CustomListAdapter extends BaseAdapter {
         holder.downbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if (!clicked) {
-                    clicked = true;
+                if (!holder.clicked) {
+                    holder.clicked = true;
 
                     try {
                         URL api = new URL(MainActivity.DOWNVOTE_API_URL + "?id=" + songs.get(position).getMongoId());
