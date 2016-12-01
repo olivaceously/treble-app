@@ -112,11 +112,11 @@ public class MainActivity extends AppCompatActivity
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent myIntent = new Intent(MainActivity.this, AddSong.class);
+                            Intent myIntent = new Intent(view.getContext(), AddSong.class);
                             myIntent.putExtra("lat", lat);
                             myIntent.putExtra("lng", lng);
                             Log.d("okay", Double.toString(myIntent.getDoubleExtra("lat", defaultValue)));
-                            startActivity(myIntent);
+                            startActivity(myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                         }
                     });
                 }

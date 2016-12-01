@@ -37,6 +37,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        demo {
+            applicationId "com.treble.www.demo"
+            versionName "1.0-demo"
+        }
+        full {
+            applicationId "com.treble.www.full"
+            versionName "1.0-full"
+        }
+    }
 }
 
 repositories {
