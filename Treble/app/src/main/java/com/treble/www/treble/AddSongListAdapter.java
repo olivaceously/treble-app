@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -139,6 +140,7 @@ public class AddSongListAdapter extends BaseAdapter {
 
                     //noinspection UnnecessaryLocalVariable
 //                    JSONArray array = new JSONArray(contentAsString);
+                    Toast.makeText(context, "Added song to feed!", Toast.LENGTH_LONG).show();
                     return;
                 }
                 catch (MalformedURLException e) {
@@ -149,7 +151,7 @@ public class AddSongListAdapter extends BaseAdapter {
                     Log.e("GetFeed doInBG(): ", e.toString());
                     return;
                 }
-//                Toast.makeText(context, "Adding song to feed!", Toast.LENGTH_LONG).show();
+
             }
         });
 

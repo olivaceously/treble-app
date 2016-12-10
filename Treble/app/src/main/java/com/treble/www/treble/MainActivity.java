@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity
                             myIntent.putExtra("lng", lng);
                             Log.d("okay", Double.toString(myIntent.getDoubleExtra("lat", defaultValue)));
                             startActivity(myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                           // parseFeed();
                         }
                     });
                 }
