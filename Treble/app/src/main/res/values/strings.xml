@@ -28,6 +28,6 @@
 
 
 
-    <string name="about_text">Treble\n\nVersion 1.0\n\nWritten by O. MacDougal and D. McConnell\n\nLast updated on 11 November 2016</string>
+    <string name="about_text">Treble\n\nVersion 1.1\n\nWritten by O. MacDougal and D. McConnell\n\nLast updated on 13 December 2016</string>
     <string name="search_error">Please enter something to search</string>
 </resources>

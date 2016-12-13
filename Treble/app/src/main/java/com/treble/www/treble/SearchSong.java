@@ -43,7 +43,6 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
         protected JSONArray doInBackground(String...query) {
 
             @SuppressWarnings("UnusedAssignment") InputStream is = null;
-            Log.d("search_query", query[0]);
             if (query != null) {
                 try {
                     URL api = new URL(MainActivity.SEARCH_API_URL + "?song=" + encode(query[0], "UTF-8"));
@@ -53,11 +52,10 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                     conn.setDoInput(true);
 
                     conn.connect();
-                    @SuppressWarnings("UnusedAssignment") int response = conn.getResponseCode();
+                    conn.getResponseCode();
                     is = conn.getInputStream();
 
                     String contentAsString = convertStreamToString(is);
-                    Log.d("searchsong", contentAsString);
                     //noinspection UnnecessaryLocalVariable
                     JSONArray array = new JSONArray(contentAsString);
                     return array;
@@ -74,7 +72,6 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
             }
             else {
                 JSONArray array = new JSONArray();
-//                Toast.makeText(this, R.string.search_error, Toast.LENGTH_LONG).show();
                 return array;
             }
         }
@@ -88,7 +85,6 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                     numSongs = songsRaw.length();
                     if (numSongs > 0) {
                         while (count < numSongs) {
-                            Log.d("while", "inside!");
                             song = songsRaw.getJSONObject(count);
                             Song s = new Song();
                             s.setId(count);
@@ -103,13 +99,12 @@ public class SearchSong extends AsyncTask<String, Integer, JSONArray> {
                             s.setAlbum(song.getString("album"));
                             s.setArt(song.getJSONArray("art"));
                             songs.add(s);
-                            Log.d("hi", s.getAlbum());
                             count++;
                         }
                         AddSong.searchList.setAdapter(new AddSongListAdapter(copyOfContext, songs, lat, lng));
                     }
                 } catch (JSONException e) {
-                    Log.d("okay", "wtf man");
+                    Log.d("errSS", "error in onPostExecute");
                 }
             }
         }

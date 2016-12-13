@@ -115,15 +115,12 @@ public class MainActivity extends AppCompatActivity
                             Intent myIntent = new Intent(view.getContext(), AddSong.class);
                             myIntent.putExtra("lat", lat);
                             myIntent.putExtra("lng", lng);
-                            Log.d("okay", Double.toString(myIntent.getDoubleExtra("lat", defaultValue)));
-                            startActivity(myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                           // parseFeed();
+                            //Log.d("okay", Double.toString(myIntent.getDoubleExtra("lat", defaultValue)));
+                            //.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                            startActivityForResult(myIntent, 1);
                         }
                     });
                 }
-                Log.d("please", Double.toString(lat));
-                Log.d("pleas2", Double.toString(lng));
-
             }
 
             @Override
@@ -139,7 +136,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onProviderDisabled(String s) {
                 Intent i = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                startActivity(i);
+                startActivityForResult(i, 1);
             }
         };
 
@@ -160,7 +157,29 @@ public class MainActivity extends AppCompatActivity
         switch (requestCode) {
             case 10:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    parseFeed();
+                    locationListener = new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            lng = location.getLongitude();
+                            lat = location.getLatitude();
+                            parseFeed();
+                        }
+
+                        @Override
+                        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                        }
+
+                        @Override
+                        public void onProviderEnabled(String provider) {
+
+                        }
+
+                        @Override
+                        public void onProviderDisabled(String provider) {
+
+                        }
+                    };
                 break;
             default:
                 break;
@@ -240,4 +259,17 @@ public class MainActivity extends AppCompatActivity
         locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
         new GetFeed(getApplicationContext(), lat, lng).execute();
     }
+
+    @Override
+    public void onActivityResult (int requestCode,int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        Log.d("yo", "in activityresulty");
+        if (resultCode == RESULT_OK)
+        {
+            parseFeed();
+        }
+
+    };
 }
+
+
