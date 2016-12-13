@@ -27,6 +27,7 @@
     <string name="minus">-</string>
 
 
+    <string name="empty_feed">The feed is currently empty...Please add a song to get the party started!</string>
 
     <string name="about_text">Treble\n\nVersion 1.1\n\nWritten by O. MacDougal and D. McConnell\n\nLast updated on 13 December 2016</string>
     <string name="search_error">Please enter something to search</string>

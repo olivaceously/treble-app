@@ -65,8 +65,6 @@ public class AddSong extends AppCompatActivity {
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
             }
         });
-
-
     }
 
     @Override
@@ -83,7 +81,6 @@ public class AddSong extends AppCompatActivity {
 
     private void parseSearch(EditText query) {
         String data = query.getText().toString();
-        Log.d("addsong", data);
         new SearchSong(getApplicationContext(), lat, lng).execute(data);
     }
 }

@@ -110,14 +110,13 @@ public class AddSongListAdapter extends BaseAdapter {
         try {
             holder.album.setImageBitmap(getImageBitmap(song.getJSONObject(1).getString("url")));
         } catch(JSONException e) {
-            Log.d("addsonglistadapter", "wtf man");
+            Log.d("err", "error in addsonglistadapter");
         }
 
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Log.d("nopnop", songs.get(position).getspotify_id());
                     URL api = new URL(MainActivity.ADD_API_URL);
                     HttpURLConnection conn = (HttpURLConnection) api.openConnection();
 
@@ -139,7 +138,6 @@ public class AddSongListAdapter extends BaseAdapter {
                     System.out.println("Response Code : " + responseCode);
 
                     //noinspection UnnecessaryLocalVariable
-//                    JSONArray array = new JSONArray(contentAsString);
                     Toast.makeText(context, "Added song to feed!", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -170,7 +168,7 @@ public class AddSongListAdapter extends BaseAdapter {
             bis.close();
             is.close();
         } catch (IOException e) {
-            Log.e("yo", "Error getting bitmap", e);
+            Log.e("err", "Error getting bitmap", e);
         }
         return bm;
     }

@@ -1,7 +1,6 @@
 package com.treble.www.treble;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -12,7 +11,6 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -32,8 +30,6 @@ import com.crashlytics.android.Crashlytics;
 
 import io.fabric.sdk.android.Fabric;
 
-import static android.R.attr.defaultValue;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -46,9 +42,11 @@ public class MainActivity extends AppCompatActivity
     private LocationManager locationManager;
     private LocationListener locationListener;
 
+    static final int MY_PERMISSION_REQUEST = 0;
     public double lat;
     public double lng;
 
+    boolean initiateFeed = false;
     public boolean loaded = false;
 
 //    TODO: improvements to make to the app
@@ -58,133 +56,111 @@ public class MainActivity extends AppCompatActivity
 //    Persistent upvoting and downvoting (doesn't get removed after reloading the feed -> involves device id)
 //    Comments (if we're adventurous)
 //    A "hot" feed, based on votes rather than date submitted. (Easy to do on backend)
-//
 
 
-    @SuppressLint("StaticFieldLeak")
     @SuppressWarnings("WeakerAccess")
     static protected ListView feedView; // add static protected ? currently an error
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
-        setContentView(R.layout.activity_main);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        if (savedInstanceState != null) {
+            initiateFeed = savedInstanceState.getBoolean("toParse");
+        }
+    }
 
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+    protected void onResume() {
+        super.onResume();
+        boolean hasPermission = false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            hasPermission = (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+                                    == PackageManager.PERMISSION_GRANTED) &&
+                            (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+                                    == PackageManager.PERMISSION_GRANTED);
+        }
+        if(initiateFeed && hasPermission) {
+            setContentView(R.layout.activity_main);
+            final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
 
-        boolean network_enabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-
-        Location location;
-
-        if(network_enabled){
-
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.INTERNET}
-                            , 10);
-                }
-                return;
-            }
-
+            locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            Location location;
             location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
             if(location!=null){
                 lat = location.getLatitude();
                 lng = location.getLongitude();
             }
-        }
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                lng = location.getLongitude();
-                lat = location.getLatitude();
-                if (!loaded) {
-                    parseFeed();
-                    loaded = true;
-                    fab.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent myIntent = new Intent(view.getContext(), AddSong.class);
-                            myIntent.putExtra("lat", lat);
-                            myIntent.putExtra("lng", lng);
-                            //Log.d("okay", Double.toString(myIntent.getDoubleExtra("lat", defaultValue)));
-                            //.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                            startActivityForResult(myIntent, 1);
-                        }
-                    });
+
+            locationListener = new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    lng = location.getLongitude();
+                    lat = location.getLatitude();
+                    if (!loaded) {
+                        parseFeed();
+                        loaded = true;
+                    }
+                }
+
+                @Override
+                public void onStatusChanged(String s, int i, Bundle bundle) {
+                }
+
+                @Override
+                public void onProviderEnabled(String s) {
+                }
+
+                @Override
+                public void onProviderDisabled(String s) {
+                    Intent i = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivityForResult(i, 1);
+                }
+            };
+
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(view.getContext(), AddSong.class);
+                    myIntent.putExtra("lat", lat);
+                    myIntent.putExtra("lng", lng);
+                    startActivityForResult(myIntent, 1);
+                }
+            });
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.addDrawerListener(toggle);
+            toggle.syncState();
+
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+            feedView = (ListView) findViewById(R.id.feedView);
+            parseFeed();
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.INTERNET},
+                            MainActivity.MY_PERMISSION_REQUEST);
                 }
             }
-
-            @Override
-            public void onStatusChanged(String s, int i, Bundle bundle) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String s) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String s) {
-                Intent i = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                startActivityForResult(i, 1);
-            }
-        };
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        feedView = (ListView) findViewById(R.id.feedView);
-        parseFeed();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        switch (requestCode) {
-            case 10:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    locationListener = new LocationListener() {
-                        @Override
-                        public void onLocationChanged(Location location) {
-                            lng = location.getLongitude();
-                            lat = location.getLatitude();
-                            parseFeed();
-                        }
-
-                        @Override
-                        public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                        }
-
-                        @Override
-                        public void onProviderEnabled(String provider) {
-
-                        }
-
-                        @Override
-                        public void onProviderDisabled(String provider) {
-
-                        }
-                    };
-                break;
-            default:
-                break;
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            if(requestCode == MY_PERMISSION_REQUEST) {
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    initiateFeed = true;
+                } else {
+                }
+            }
         }
-    }
 
     @Override
     public void onBackPressed() {
@@ -230,18 +206,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_nearme) {
             parseFeed();
-            //return true;
-        } //else if (id == R.id.nav_gallery) {
-
-        //} else if (id == R.id.nav_slideshow) {
-
-        //} else if (id == R.id.nav_manage) {
-
-        //} else if (id == R.id.nav_share) {
-
-        // } else if (id == R.id.nav_send) {
-
-        // }
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -263,13 +228,18 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onActivityResult (int requestCode,int resultCode, Intent data) {
         //super.onActivityResult(requestCode, resultCode, data);
-        Log.d("yo", "in activityresulty");
         if (resultCode == RESULT_OK)
         {
             parseFeed();
         }
 
-    };
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("toParse", initiateFeed);
+    }
 }
 
 

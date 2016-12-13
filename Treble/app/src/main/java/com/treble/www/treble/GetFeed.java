@@ -8,6 +8,7 @@ package com.treble.www.treble;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,7 +59,6 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
             is = conn.getInputStream();
 
             String contentAsString = convertStreamToString(is);
-            Log.d("hererere", contentAsString);
 
             //noinspection UnnecessaryLocalVariable
             JSONArray array = new JSONArray(contentAsString);
@@ -92,7 +92,6 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     s.setMongoId(song.getString("_id"));
                     s.setSpotify_id(song.getString("spotid"));
                     s.setUri(song.getString("uri"));
-//                    s.setToken(song.getString("token"));
                     s.setLat(song.getDouble("lat"));
                     s.setLng(song.getDouble("lng"));
                     s.setDateAdded(song.getString("dateAdded"));
@@ -102,16 +101,16 @@ class GetFeed extends AsyncTask<Void, Integer, JSONArray> {
                     s.setAlbum(song.getString("album"));
                     s.setArt(song.getJSONArray("art"));
                     songs.add(s);
-                    Log.d("hi", s.getAlbum());
-                    Log.d("hi", s.getMongoId());
                     count++;
                 }
                 Collections.reverse(songs);
                 MainActivity.feedView.setAdapter(new CustomListAdapter(copyOfContext, songs));
+            } else {
+                Toast.makeText(copyOfContext, R.string.empty_feed, Toast.LENGTH_LONG).show();
             }
         }
         catch (JSONException e) {
-            Log.d("okay", "wtf man");
+            Log.d("err", "in Get Feed");
 
         }
     }
